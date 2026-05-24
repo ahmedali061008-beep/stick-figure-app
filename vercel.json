@@ -2,10 +2,7 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.html",
-      "src": "join.html",
-      "src": "login.html",
-      "src": "profile.html",    
+      "src": "*.html",
       "use": "@vercel/static"
     }
   ]
