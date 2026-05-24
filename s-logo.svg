@@ -1,0 +1,9 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7b2ff7;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#076cf1;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <path d="M52 16C52 8.26801 43.732 4 32 4C20.268 4 12 8.26801 12 16C12 23.732 20.268 28 32 28C43.732 28 52 32.268 52 40C52 47.732 43.732 52 32 52C20.268 52 12 47.732 12 40" stroke="url(#sGradient)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

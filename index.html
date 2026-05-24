@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stick Figure App</title>
+    <link rel="icon" type="image/svg+xml" href="s-logo.svg?cachebust=2">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 2rem;
+            background-color: #0a0a0a;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 2rem;
+        }
+
+        .hero-container {
+            text-align: center;
+            background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+            padding: 4rem;
+            border-radius: 50px;
+            box-shadow: 0 50px 50px rgba(0, 0, 0, 0.15);
+            border: 1px solid #333;
+            max-width: 600px;
+            width: min(100%, 600px);
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #7b2ff7, #076cf1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #b0b0b0;
+            margin-bottom: 2rem;
+        }
+
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+        .download-btn,
+        .login-btn ,
+        .join-btn {
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 48, 220, 0.55);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .download-btn {
+            background: #8e12c3;
+        }
+
+        .download-btn:hover {
+            background: #8e4dfa;
+            transform: translateY(-3px);
+        }
+
+        .login-btn {
+            background: #0f6eff;
+            box-shadow: 0 4px 15px rgba(0, 110, 255, 0.4);
+        }
+
+        .login-btn:hover {
+            filter: brightness(1.08);
+            transform: translateY(-3px);
+        }
+
+
+        .join-btn {
+            background: #0f13ff;
+            box-shadow: 0 4px 15px rgba(0, 110, 255, 0.4);
+        }
+
+        .join-btn:hover {
+            filter: brightness(1.08);
+            transform: translateY(-3px);
+        }
+        .profile-badge {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 0.75rem 1rem;
+            background: rgba(15, 15, 22, 0.96);
+            border: 1px solid rgba(142, 77, 250, 0.22);
+            border-radius: 999px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.25);
+            color: white;
+            z-index: 20;
+        }
+
+        .profile-badge[hidden] {
+            display: none !important;
+        }
+
+        .profile-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #7b2ff7, #076cf1);
+            display: grid;
+            place-items: center;
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .profile-name {
+            font-size: 0.95rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero-container">
+        <h1>Stick Figure App</h1>
+        <p>Watch a Stick Figure Walk!</p>
+        <p>Experience the joy of seeing a stick figure come to life with our simple and fun animation. Click the button below to <strong>download the app</strong> and start watching your stick figure walk!</p>
+        <p>It might be overrated because its made with ai, But kids can have fun!</p>
+
+<div class="button-row">
+    <a href="stick/stick.exe" download class="download-btn">Download</a>
+    <a href="login.html" class="login-btn" id="loginButton">Login</a>
+
+    <a href="profile.html" class="join-btn" id="profileButton">Profile</a>
+    <a href="join.html" class="join-btn" id="joinButton">Join</a>
+</div>
+
+    </div>
+    <div class="profile-badge" id="profileBadge" hidden>
+        <div class="profile-avatar" id="profileAvatar">S</div>
+        <div class="profile-name" id="profileName"></div>
+    </div>
+    
+    <div class="hero-container">
+    <h1>System Requirements:</h1>
+    <p>Operating System: Windows 11 or Windows 10, Windows 7 or more.</p>
+            </div>
+
+
+        <div class="hero-container">
+    <h1>Note:</h1>
+    <p>This is a simple stick figure animation in a window, It is too new because its in 2026 which is really new and it is worse than other websites, Despite it was made in 2026 Other types of websites have been made in 2015, Which is really old.</p>
+
+
+        </div>
+        <div class="hero-container">
+        <h1>Creators:</h1>
+        <p>Credits to Muhammad Ali and Credits to Github Copilot</p>
+        <footer>
+            <h4>Created by Muhammad Ali</h4>
+            &copy; 2026 Stick Figure App. All rights reserved.
+        </footer>
+        </div>
+
+    <script>
+ // =========================================================
+// FINAL CORRECTED JAVASCRIPT LOGIC for index.html
+// =========================================================
+
+document.addEventListener('DOMContentLoaded', function() {
+    const accountName = sessionStorage.getItem('stickfigureGoogleAccountName');
+    const loginButton = document.getElementById('loginButton');
+    const joinButton = document.getElementById('joinButton');
+    const profileButton = document.getElementById('profileButton'); // The button we are controlling
+    const profileBadge = document.getElementById('profileBadge');
+    const profileName = document.getElementById('profileName');
+    const profileAvatar = document.getElementById('profileAvatar');
+
+
+    // =====================================================================
+    // CORE LOGIC: Check status and update all elements accordingly
+    // =====================================================================
+
+    if (accountName) {
+        // --- 🟢 LOGGED IN STATE ---
+        
+        // 1. Profile Button: MUST be visible
+        if (profileButton) {
+            profileButton.style.display = 'inline-block';
+        }
+
+        // 2. Hide Login/Join buttons
+        if (loginButton) {
+            loginButton.style.display = 'none';
+        }
+        if (joinButton) {
+            joinButton.style.display = 'none';
+        }
+
+        // 3. Show Profile Badge and data
+        if (profileBadge) {
+            profileBadge.hidden = false;
+            profileName.textContent = accountName;
+            profileAvatar.textContent = accountName.trim().charAt(0).toUpperCase();
+        }
+    } else {
+        // --- 🔴 LOGGED OUT STATE (CRITICAL FIX) ---
+        
+        // 1. Profile Button: Must be hidden when logged out
+        if (profileButton) {
+            profileButton.style.display = 'none';
+        }
+
+        // 2. Hide Profile Badge (Must be hidden)
+        if (profileBadge) {
+            profileBadge.hidden = true;
+        }
+        
+        // (The Login/Join buttons remain visible by default HTML setup)
+    }
+});
+
+    </script>
+</body>
+</html>

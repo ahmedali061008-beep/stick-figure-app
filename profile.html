@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | Stick Figure App</title>
+    <link rel="icon" type="image/svg+xml" href="s-logo.svg?cachebust=2">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 2rem;
+            background-color: #06060b;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .profile-card {
+            width: min(100%, 420px);
+            padding: 3rem;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #121217, #0a0a0e);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .profile-card h1 {
+            margin: 0 0 1.5rem;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #7b2ff7, #076cf1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .profile-card .profile-avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .profile-card .profile-name {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .profile-card label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            color: #d4d4d4;
+            font-size: 0.95rem;
+        }
+
+        .profile-card input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #0f0f14;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .button-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .button-row a {
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.3s, background 0.3s;
+            box-shadow: 0 4px 15px rgba(79, 48, 220, 0.55);
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .button-row a.download-btn {
+            background: #8e12c3;
+        }
+
+        .button-row a.download-btn:hover {
+            background: #8e4dfa;
+            transform: translateY(-3px);
+        }
+
+        .button-row a.logout-btn {
+            background: #0f13ff;
+            box-shadow: 0 4px 15px rgba(0, 110, 255, 0.4);
+        }
+
+        .button-row a.logout-btn:hover {
+            filter: brightness(1.08);
+            transform: translateY(-3px);
+        }
+    </style>
+<div class="hero-container">
+
+</div>
+</head>
+<body>

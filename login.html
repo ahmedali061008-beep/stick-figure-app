@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Stick Figure App</title>
+    <link rel="icon" type="image/svg+xml" href="s-logo.svg?cachebust=2">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            padding: 2rem;
+            background-color: #06060b;
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-card {
+            width: min(100%, 420px);
+            padding: 3rem;
+            border-radius: 28px;
+            background: linear-gradient(145deg, #121217, #0a0a0e);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .login-card h1 {
+            margin: 0 0 1.5rem;
+            font-size: 2.5rem;
+            background: linear-gradient(90deg, #7b2ff7, #076cf1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .login-card label {
+            display: block;
+            text-align: left;
+            margin-bottom: 0.5rem;
+            color: #d4d4d4;
+            font-size: 0.95rem;
+        }
+
+        .login-card input {
+            width: 100%;
+            padding: 0.9rem 1rem;
+            margin-bottom: 1rem;
+            border-radius: 12px;
+            border: 1px solid #333;
+            background: #0f0f14;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .login-card button {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 14px;
+            background: #0f6eff;
+            color: white;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+        }
+
+        .login-card button:hover {
+            filter: brightness(1.08);
+            transform: translateY(-2px);
+        }
+
+        .login-card p {
+            margin-top: 1.25rem;
+            color: #7d7d7d;
+            font-size: 0.95rem;
+        }
+
+        .login-card a {
+            color: #8e4dfa;
+            text-decoration: none;
+        }
+
+        .verify-message {
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: rgba(142, 77, 250, 0.15);
+            border: 1px solid rgba(142, 77, 250, 0.3);
+            border-radius: 12px;
+            color: #d4d4d4;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .verify-code-display {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #8e4dfa;
+            font-family: monospace;
+            letter-spacing: 0.1em;
+            margin-top: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" placeholder="Username" maxlength="20" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required>
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" placeholder="Enter your password" required>
+            <button type="submit">Sign in</button>
+        </form>
+        <form id="verifyForm" style="display:none;">
+            <label for="verifyCode">Enter verification code</label>
+            <input id="verifyCode" name="verifyCode" type="text" placeholder="Enter 6-digit code" required>
+            <button type="submit">Verify</button>
+        </form>
+        <p>Don't have an account? <a href="index.html">Back to home</a></p>
+
+         <div id="verifyMessage" class="verify-message">
+        Use this code to verify your login:
+       <div id="codeDisplay" class="verify-code-display"></div>
+      </div>
+      </div>
+
+    <script>
+        let generatedCode = null;
+        let currentEmail = null;
+        let currentName = null;
+
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (!name || !email || !password) return;
+            if (name.length > 20) {
+                alert('Name must be 20 characters or less.');
+                return;
+            }
+
+            currentEmail = email;
+            currentName = name;
+
+            const verificationCode = String(Math.floor(100000 + Math.random() * 900000));
+            generatedCode = verificationCode;
+            
+            document.getElementById('codeDisplay').textContent = verificationCode;
+            document.getElementById('verifyMessage').style.display = 'block';
+            document.getElementById('loginForm').style.display = 'none';
+            document.getElementById('verifyForm').style.display = 'block';
+
+            sessionStorage.setItem('savedEmail', email);
+            sessionStorage.setItem('savedPassword', password);
+        });
+
+        document.getElementById('verifyForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const enteredCode = document.getElementById('verifyCode').value.trim();
+            
+            if (enteredCode === generatedCode) {
+                sessionStorage.setItem('stickfigureUserEmail', currentEmail);
+                sessionStorage.setItem('stickfigureGoogleAccountName', currentName);
+                window.location.href = 'index.html';
+            } else {
+                alert('Incorrect verification code. Please try again.');
+                document.getElementById('verifyCode').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
